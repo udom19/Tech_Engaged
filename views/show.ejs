@@ -1,0 +1,30 @@
+<% include partials/header %>
+  <div class="container">
+    <h1>Title: <%= question['title'] %></h1>
+    <p><strong>Tags: </strong> <%= question['tags'] %></p>
+    <p><strong>Date asked: </strong> <%= question['created'].toDateString() %></p>
+    <p><strong>Question</strong></p>
+    <p><%= question.questn %></p>
+    <!--<p><%= question.answer %></p>-->
+    <!--<hr>
+    <form action="/webdevcom/questions/<%= question._id %>?_method=PUT" method="POST">
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Answer this question</label>
+            <textarea class="form-control" id="questionTextarea1" rows="3" name="answer"></textarea>
+          </div>
+          <button class="btn btn-primary btn-lg" a>Submit</button>
+    </form>-->
+  <!--Semantic UI Form-->
+    <div class="ui main text container segment">
+      <div class="ui huge header">
+        <form action="/webdevcom/questions" class="ui form" method="POST">
+            <div class="field">
+              <label>Post Your Answer</label>
+              <textarea name="answer"></textarea>
+            </div>
+            <button class="ui teal big basic button" type="submit">Submit</button> 
+          </form>
+        </div>
+    </div>
+  </div>
+<% include partials/footer %>
